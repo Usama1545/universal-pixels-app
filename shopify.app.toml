@@ -1,0 +1,29 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "ad68e8b65ab1a224d6d41fba90b62324"
+name = "Universal pixel app"
+handle = "universal-pixel-app-1"
+application_url = "https://pleasantly-divine-maggot.ngrok-free.app/shopify/redirect?app_id=1"
+embedded = true
+
+[build]
+include_config_on_deploy = true
+
+[webhooks]
+api_version = "2025-07"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks/app/uninstalled"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/scopes_update" ]
+  uri = "/webhooks/app/scopes_update"
+
+[auth]
+redirect_urls = [
+  "https://pleasantly-divine-maggot.ngrok-free.app/shopify/callback?app_id=1"
+]
+
+[pos]
+embedded = false

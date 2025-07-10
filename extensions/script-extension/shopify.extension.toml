@@ -1,0 +1,6 @@
+name = "script-extension"
+type = "theme"
+
+[app_embed_block.script_embed]
+name = "Script Injector"
+target = "head"
